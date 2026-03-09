@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RATE_LIMIT_MAP = new Map<string, number>();
@@ -83,7 +85,7 @@ export async function POST(request: Request) {
     }
     RATE_LIMIT_MAP.set(email, now);
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: "sosawz.sng@gmail.com",
       replyTo: email,
