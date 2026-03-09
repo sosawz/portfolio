@@ -1,25 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Server, Wrench } from "lucide-react";
+import { Code, Smartphone, Database } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 const highlights = [
   {
     icon: Code,
-    title: "Frontend",
-    description: "Building responsive, accessible UIs with React & Next.js",
+    title: "Frontend Development",
+    description:
+      "Building web applications with React.js, Next.js, and Tailwind CSS with component libraries like shadcn/ui",
   },
   {
-    icon: Server,
-    title: "Backend",
-    description: "Designing APIs and services with Node.js & databases",
+    icon: Smartphone,
+    title: "Mobile Development",
+    description:
+      "Cross-platform mobile apps with React Native, integrating Firebase Auth and cloud storage",
   },
   {
-    icon: Wrench,
-    title: "DevOps",
-    description: "CI/CD pipelines, Docker, and cloud deployments",
+    icon: Database,
+    title: "API & Integration",
+    description:
+      "REST API integration with Axios interceptors for authentication, error handling, and database management",
   },
 ];
 
@@ -52,18 +55,19 @@ export function About() {
           >
             <p className="leading-relaxed">
               Hi! I&apos;m <span className="font-medium text-foreground">so.sawz</span>,
-              a frontend developer passionate about crafting clean, performant
-              web applications.
+              a frontend developer who graduated in Computer Engineering and
+              Artificial Intelligence from Walailak University.
             </p>
             <p className="leading-relaxed">
-              I enjoy turning complex problems into simple, elegant solutions.
-              My focus is on writing maintainable code with great developer and
-              user experience.
+              I&apos;ve built cross-platform mobile apps with React Native at
+              ThaiDotRun and currently develop frontend applications with
+              React.js and Tailwind CSS at 11-Infotech System. I focus on
+              writing clean, maintainable code with great user experience.
             </p>
             <p className="leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new
-              technologies, contributing to open source, or learning something
-              new every day.
+              My day-to-day involves building reusable UI components, integrating
+              REST APIs, and working with design systems like shadcn/ui to
+              deliver consistent, production-ready applications.
             </p>
 
             {/* Quick stats */}
@@ -73,12 +77,12 @@ export function About() {
                 <p className="text-sm text-muted">Years Experience</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">10+</p>
-                <p className="text-sm text-muted">Projects Built</p>
+                <p className="text-2xl font-bold text-foreground">2</p>
+                <p className="text-sm text-muted">Companies</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">5+</p>
-                <p className="text-sm text-muted">Technologies</p>
+                <p className="text-2xl font-bold text-foreground">7+</p>
+                <p className="text-sm text-muted">Tech Stacks</p>
               </div>
             </div>
           </motion.div>
