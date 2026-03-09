@@ -71,10 +71,10 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4, ease }}
         >
           <Link
-            href="/projects"
+            href="/experience"
             className="rounded-full bg-primary px-8 py-3 text-sm font-medium text-black transition-colors duration-300 hover:bg-primary-hover"
           >
-            View Projects
+            View Experience
           </Link>
           <Link
             href="/contact"

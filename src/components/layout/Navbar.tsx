@@ -4,12 +4,14 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/constants";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
@@ -31,22 +33,37 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link, i) => (
-            <motion.li
-              key={link.href}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.06, ease }}
-            >
-              <Link
-                href={link.href}
-                className="group relative text-sm text-muted transition-colors duration-300 hover:text-foreground"
+          {navLinks.map((link, i) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+
+            return (
+              <motion.li
+                key={link.href}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + i * 0.06, ease }}
               >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all duration-300 ease-out group-hover:w-full" />
-              </Link>
-            </motion.li>
-          ))}
+                <Link
+                  href={link.href}
+                  className={`group relative text-sm transition-colors duration-300 ${
+                    isActive
+                      ? "text-foreground"
+                      : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ease-out ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              </motion.li>
+            );
+          })}
         </ul>
 
         {/* CTA */}
@@ -112,22 +129,33 @@ export function Navbar() {
             className="overflow-hidden border-t border-border bg-background md:hidden"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.04, ease }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block rounded-lg px-3 py-2 text-sm text-muted transition-colors duration-300 hover:bg-surface hover:text-foreground"
+              {navLinks.map((link, i) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
+
+                return (
+                  <motion.li
+                    key={link.href}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.04, ease }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.li>
-              ))}
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block rounded-lg px-3 py-2 text-sm transition-colors duration-300 ${
+                        isActive
+                          ? "bg-primary-light text-foreground"
+                          : "text-muted hover:bg-surface hover:text-foreground"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                );
+              })}
               <motion.li
                 initial={{ opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
