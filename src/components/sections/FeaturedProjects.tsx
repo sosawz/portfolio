@@ -47,7 +47,7 @@ export function FeaturedProjects() {
         >
           <h2 className="text-3xl font-bold sm:text-4xl">Featured Projects</h2>
           <p className="mt-4 text-lg text-muted">
-            Some of my recent work that I'm proud of
+            Some of my recent work that I&apos;m proud of
           </p>
         </motion.div>
 

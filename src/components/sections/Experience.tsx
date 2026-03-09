@@ -56,7 +56,7 @@ export function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-[19px] top-2 hidden h-[calc(100%-16px)] w-px bg-border md:block" />
+          <div className="absolute left-4.75 top-2 hidden h-[calc(100%-16px)] w-px bg-border md:block" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
