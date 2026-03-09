@@ -17,20 +17,20 @@ function sanitize(str: string) {
 function buildHtml(name: string, email: string, message: string) {
   return `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%); padding: 32px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #facc15 0%, #eab308 100%); padding: 32px; text-align: center;">
         <h1 style="margin: 0; color: #000; font-size: 20px; font-weight: 700;">New Contact Message</h1>
-        <p style="margin: 8px 0 0; color: #1a1a1a; font-size: 14px;">via sosawz.dev</p>
+        <p style="margin: 8px 0 0; color: #171717; font-size: 14px;">via sosawz.dev</p>
       </div>
       <div style="padding: 32px;">
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
-            <td style="padding: 12px 0; border-bottom: 1px solid #1f1f1f; color: #737373; font-size: 13px; width: 80px; vertical-align: top;">From</td>
-            <td style="padding: 12px 0; border-bottom: 1px solid #1f1f1f; color: #fafafa; font-size: 14px; font-weight: 500;">${sanitize(name)}</td>
+            <td style="padding: 12px 0; border-bottom: 1px solid #262626; color: #737373; font-size: 13px; width: 80px; vertical-align: top;">From</td>
+            <td style="padding: 12px 0; border-bottom: 1px solid #262626; color: #ededed; font-size: 14px; font-weight: 500;">${sanitize(name)}</td>
           </tr>
           <tr>
-            <td style="padding: 12px 0; border-bottom: 1px solid #1f1f1f; color: #737373; font-size: 13px; vertical-align: top;">Email</td>
-            <td style="padding: 12px 0; border-bottom: 1px solid #1f1f1f;">
-              <a href="mailto:${sanitize(email)}" style="color: #a3e635; font-size: 14px; text-decoration: none;">${sanitize(email)}</a>
+            <td style="padding: 12px 0; border-bottom: 1px solid #262626; color: #737373; font-size: 13px; vertical-align: top;">Email</td>
+            <td style="padding: 12px 0; border-bottom: 1px solid #262626;">
+              <a href="mailto:${sanitize(email)}" style="color: #facc15; font-size: 14px; text-decoration: none;">${sanitize(email)}</a>
             </td>
           </tr>
           <tr>
@@ -39,10 +39,10 @@ function buildHtml(name: string, email: string, message: string) {
           </tr>
         </table>
         <div style="margin-top: 32px; text-align: center;">
-          <a href="mailto:${sanitize(email)}" style="display: inline-block; background: #a3e635; color: #000; padding: 10px 24px; border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none;">Reply to ${sanitize(name)}</a>
+          <a href="mailto:${sanitize(email)}" style="display: inline-block; background: #facc15; color: #000; padding: 10px 24px; border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none;">Reply to ${sanitize(name)}</a>
         </div>
       </div>
-      <div style="padding: 16px 32px; border-top: 1px solid #1f1f1f; text-align: center;">
+      <div style="padding: 16px 32px; border-top: 1px solid #262626; text-align: center;">
         <p style="margin: 0; color: #525252; font-size: 12px;">Sent from portfolio contact form</p>
       </div>
     </div>`;
