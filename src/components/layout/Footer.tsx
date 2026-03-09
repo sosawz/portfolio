@@ -1,10 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { socialLinks } from "@/lib/constants";
 
-const socialLinks = [
-  { icon: Github, href: "https://github.com/sosawz", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/so-sawz-4392703a5", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:sosawz.sng@gmail.com", label: "Email" },
-];
+const iconMap = { Github, Linkedin, Mail } as const;
 
 export function Footer() {
   return (
@@ -15,18 +12,21 @@ export function Footer() {
         </p>
 
         <div className="flex items-center gap-4">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              className="rounded-lg p-2 text-muted transition-colors hover:bg-surface hover:text-primary"
-            >
-              <link.icon size={20} />
-            </a>
-          ))}
+          {socialLinks.map((link) => {
+            const Icon = iconMap[link.icon];
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="rounded-lg p-2 text-muted transition-colors hover:bg-surface hover:text-primary"
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
         </div>
       </div>
     </footer>

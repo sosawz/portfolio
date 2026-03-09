@@ -1,19 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+import { socialLinks } from "@/lib/constants";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-const socialLinks = [
-  { icon: Github, href: "https://github.com/sosawz", label: "GitHub" },
-  {
-    icon: Linkedin,
-    href: "https://linkedin.com/in/so-sawz-4392703a5",
-    label: "LinkedIn",
-  },
-  { icon: Mail, href: "mailto:sosawz.sng@gmail.com", label: "Email" },
-];
+const iconMap = { Github, Linkedin, Mail } as const;
 
 export function Hero() {
   return (
@@ -54,7 +48,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
         >
-          Full-Stack Developer
+          Frontend Developer
         </motion.p>
 
         {/* Description */}
@@ -66,7 +60,7 @@ export function Hero() {
         >
           I build modern web applications with clean code and great user
           experiences. Passionate about TypeScript, React, and everything
-          full-stack.
+          frontend.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -76,18 +70,18 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease }}
         >
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             className="rounded-full bg-primary px-8 py-3 text-sm font-medium text-black transition-colors duration-300 hover:bg-primary-hover"
           >
             View Projects
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="rounded-full border border-border px-8 py-3 text-sm font-medium text-foreground transition-colors duration-300 hover:border-primary/50 hover:bg-primary-light"
           >
             Contact Me
-          </a>
+          </Link>
         </motion.div>
 
         {/* Social links */}
@@ -97,34 +91,22 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5, ease }}
         >
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              className="rounded-lg p-2.5 text-muted transition-colors duration-300 hover:bg-surface hover:text-primary"
-            >
-              <link.icon size={20} />
-            </a>
-          ))}
+          {socialLinks.map((link) => {
+            const Icon = iconMap[link.icon];
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="rounded-lg p-2.5 text-muted transition-colors duration-300 hover:bg-surface hover:text-primary"
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.a
-          href="#about"
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted transition-colors duration-300 hover:text-primary"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 8, 0] }}
-          transition={{
-            opacity: { duration: 0.6, delay: 0.8, ease },
-            y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-          }}
-          aria-label="Scroll to about"
-        >
-          <ArrowDown size={20} />
-        </motion.a>
       </div>
     </section>
   );
