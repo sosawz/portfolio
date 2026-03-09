@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "so.sawz",
   title: "sosawz",
   description:
-    "Frontend developer portfolio showcasing projects, skills, and experience. Specializing in React, Next.js, and TypeScript.",
+    "Frontend developer portfolio showcasing skills and experience. Specializing in React, Next.js, and TypeScript.",
   url: "https://sosawz.dev",
   ogImage: "https://sosawz.dev/og.png",
   author: {
