@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
+import { BackToTop } from "@/components/ui/BackToTop";
 import { siteConfig } from "@/lib/constants";
 import "./globals.css";
 
@@ -92,6 +94,8 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
