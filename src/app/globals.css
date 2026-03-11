@@ -6,19 +6,19 @@
   --primary: #facc15;
   --primary-hover: #eab308;
   --primary-light: rgba(250, 204, 21, 0.1);
+  --primary-text: #a16207;
   --surface: #ffffff;
   --border: #e5e5e5;
-  --muted: #a3a3a3;
+  --muted: #6b7280;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --surface: #171717;
-    --border: #262626;
-    --muted: #737373;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary-text: #facc15;
+  --surface: #171717;
+  --border: #262626;
+  --muted: #737373;
 }
 
 @theme inline {
@@ -27,6 +27,7 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-primary-light: var(--primary-light);
+  --color-primary-text: var(--primary-text);
   --color-surface: var(--surface);
   --color-border: var(--border);
   --color-muted: var(--muted);

@@ -21,7 +21,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="rounded-lg p-2 text-muted transition-colors hover:bg-surface hover:text-primary"
+                className="rounded-lg p-2 text-muted transition-colors hover:bg-surface hover:text-primary-text"
               >
                 <Icon size={20} />
               </a>

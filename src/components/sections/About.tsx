@@ -38,7 +38,7 @@ export function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16"
         >
-          <span className="text-sm font-medium text-primary">About me</span>
+          <span className="text-sm font-medium text-primary-text">About me</span>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Get to know me
           </h2>
@@ -99,7 +99,7 @@ export function About() {
                 className="group rounded-2xl border border-border p-6 transition-colors duration-300 hover:border-primary/50 hover:bg-surface"
               >
                 <div className="flex items-start gap-4">
-                  <div className="rounded-lg bg-primary-light p-2.5 text-primary">
+                  <div className="rounded-lg bg-primary-light p-2.5 text-primary-text">
                     <item.icon size={20} />
                   </div>
                   <div>

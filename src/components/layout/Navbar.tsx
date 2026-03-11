@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/constants";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -27,7 +28,7 @@ export function Navbar() {
             href="/"
             className="text-lg font-bold tracking-tight"
           >
-            so<span className="text-primary">.</span>sawz
+            so<span className="text-primary-text">.</span>sawz
           </Link>
         </motion.div>
 
@@ -66,23 +67,28 @@ export function Navbar() {
           })}
         </ul>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 + navLinks.length * 0.06, ease }}
-          whileHover={{ scale: 1.05, transition: { duration: 0.25, ease } }}
-          whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
-        >
-          <Link
-            href="/contact"
-            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-black transition-colors duration-300 hover:bg-primary-hover md:inline-block"
+        {/* Right side */}
+        <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 + navLinks.length * 0.06, ease }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.25, ease } }}
+            whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
           >
-            Get in Touch
-          </Link>
-        </motion.div>
+            <Link
+              href="/contact"
+              className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-black transition-colors duration-300 hover:bg-primary-hover"
+            >
+              Get in Touch
+            </Link>
+          </motion.div>
+        </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile right side */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           className="relative flex h-10 w-10 items-center justify-center text-foreground md:hidden"
@@ -116,6 +122,7 @@ export function Navbar() {
             )}
           </AnimatePresence>
         </motion.button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
