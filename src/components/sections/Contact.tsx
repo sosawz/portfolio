@@ -76,7 +76,7 @@ export function Contact() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16"
         >
-          <span className="text-sm font-medium text-primary">Contact</span>
+          <span className="text-sm font-medium text-primary-text">Contact</span>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Get in touch
           </h2>
@@ -156,7 +156,7 @@ export function Contact() {
             </button>
 
             {status === "sent" && (
-              <p className="text-sm text-primary">
+              <p className="text-sm text-primary-text">
                 Message sent successfully! I&apos;ll get back to you soon.
               </p>
             )}
@@ -185,7 +185,7 @@ export function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-4"
                   >
-                    <div className="rounded-lg bg-primary-light p-2.5 text-primary">
+                    <div className="rounded-lg bg-primary-light p-2.5 text-primary-text">
                       <item.icon size={20} />
                     </div>
                     <div>
@@ -197,7 +197,7 @@ export function Contact() {
                   </a>
                 ) : (
                   <div className="flex items-center gap-4">
-                    <div className="rounded-lg bg-primary-light p-2.5 text-primary">
+                    <div className="rounded-lg bg-primary-light p-2.5 text-primary-text">
                       <item.icon size={20} />
                     </div>
                     <div>

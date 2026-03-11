@@ -25,7 +25,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
         >
-          <span className="inline-block rounded-full border border-primary/30 bg-primary-light px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="inline-block rounded-full border border-primary/30 bg-primary-light px-4 py-1.5 text-sm font-medium text-primary-text">
             Open to new opportunities
           </span>
         </motion.div>
@@ -38,7 +38,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1, ease }}
         >
           Hi, I&apos;m{" "}
-          <span className="text-primary">so.sawz</span>
+          <span className="text-primary-text">so.sawz</span>
         </motion.h1>
 
         {/* Role */}
@@ -100,7 +100,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="rounded-lg p-2.5 text-muted transition-colors duration-300 hover:bg-surface hover:text-primary"
+                className="rounded-lg p-2.5 text-muted transition-colors duration-300 hover:bg-surface hover:text-primary-text"
               >
                 <Icon size={20} />
               </a>

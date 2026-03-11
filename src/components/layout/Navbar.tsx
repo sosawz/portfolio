@@ -28,7 +28,7 @@ export function Navbar() {
             href="/"
             className="text-lg font-bold tracking-tight"
           >
-            so<span className="text-primary">.</span>sawz
+            so<span className="text-primary-text">.</span>sawz
           </Link>
         </motion.div>
 

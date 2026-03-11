@@ -47,7 +47,7 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16"
         >
-          <span className="text-sm font-medium text-primary">Experience</span>
+          <span className="text-sm font-medium text-primary-text">Experience</span>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Where I&apos;ve worked
           </h2>
@@ -70,7 +70,7 @@ export function Experience() {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 top-1 hidden md:block">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-primary">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-primary-text">
                     {exp.type === "work" ? (
                       <Briefcase size={18} />
                     ) : (
@@ -85,7 +85,7 @@ export function Experience() {
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold">{exp.title}</h3>
-                      <p className="text-sm text-primary">{exp.company}</p>
+                      <p className="text-sm text-primary-text">{exp.company}</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="inline-block rounded-full border border-border px-3 py-1 text-xs text-muted">
@@ -113,7 +113,7 @@ export function Experience() {
                     {exp.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full border border-primary/20 bg-primary-light px-3 py-1 text-xs text-primary"
+                        className="rounded-full border border-primary/20 bg-primary-light px-3 py-1 text-xs text-primary-text"
                       >
                         {tech}
                       </span>
@@ -133,7 +133,7 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 mt-24"
         >
-          <span className="text-sm font-medium text-primary">Education</span>
+          <span className="text-sm font-medium text-primary-text">Education</span>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Where I&apos;ve studied
           </h2>
@@ -148,7 +148,7 @@ export function Experience() {
         >
           {/* Timeline dot */}
           <div className="absolute left-0 top-1 hidden md:block">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-primary">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-primary-text">
               <GraduationCap size={18} />
             </div>
           </div>
@@ -159,7 +159,7 @@ export function Experience() {
                 <h3 className="text-lg font-semibold">
                   Bachelor of Engineering
                 </h3>
-                <p className="text-sm text-primary">
+                <p className="text-sm text-primary-text">
                   Walailak University
                 </p>
               </div>
