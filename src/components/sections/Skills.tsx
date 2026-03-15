@@ -114,7 +114,7 @@ export function Skills() {
         >
           <p className="mb-3 text-sm font-medium text-primary-text">Currently exploring</p>
           <div className="flex flex-wrap gap-2">
-            {["Go", "tRPC", "Playwright"].map((tech, i) => (
+            {["Go", "Playwright"].map((tech, i) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.85 }}
