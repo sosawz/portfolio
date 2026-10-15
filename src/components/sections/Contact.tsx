@@ -66,7 +66,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="detail-section px-6">
       <div className="mx-auto max-w-4xl">
         {/* Section header */}
         <motion.div
@@ -74,12 +74,12 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
+          className="detail-heading mb-16"
         >
           <span className="text-sm font-medium text-primary-text">Contact</span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Get in touch
-          </h2>
+          </h1>
           <p className="mt-4 text-muted">
             Have a question or want to work together? Feel free to reach out.
           </p>
@@ -106,6 +106,7 @@ export function Contact() {
                 id="name"
                 name="name"
                 type="text"
+                autoComplete="name"
                 required
                 placeholder="Your name"
                 className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted/50 transition-colors duration-300 focus:border-primary focus:outline-none"
@@ -123,6 +124,7 @@ export function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                autoComplete="email"
                 required
                 placeholder="your@email.com"
                 className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted/50 transition-colors duration-300 focus:border-primary focus:outline-none"
@@ -156,12 +158,12 @@ export function Contact() {
             </button>
 
             {status === "sent" && (
-              <p className="text-sm text-primary-text">
+              <p role="status" className="text-sm text-primary-text">
                 Message sent successfully! I&apos;ll get back to you soon.
               </p>
             )}
             {status === "error" && (
-              <p className="text-sm text-red-400">
+              <p role="alert" className="text-sm text-red-400">
                 Something went wrong. Please try again or email me directly.
               </p>
             )}

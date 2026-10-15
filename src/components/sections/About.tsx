@@ -1,7 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Smartphone, Database } from "lucide-react";
+import { Code, Server, Database } from "lucide-react";
+
+import { projects } from "@/lib/projects";
+import { siteConfig } from "@/lib/constants";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -10,25 +13,25 @@ const highlights = [
     icon: Code,
     title: "Frontend Development",
     description:
-      "Building web applications with React.js, Next.js, and Tailwind CSS with component libraries like shadcn/ui",
+      "React and Next.js interfaces, reusable components, searchable dashboards, and responsive web experiences",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Development",
+    icon: Server,
+    title: "Backend Development",
     description:
-      "Cross-platform mobile apps with React Native, integrating Firebase Auth and cloud storage",
+      "Go and Fiber services, Hono APIs with TypeScript, request validation, and Spring Boot learning projects",
   },
   {
     icon: Database,
-    title: "API & Integration",
+    title: "Data & Application Infrastructure",
     description:
-      "REST API integration with Axios interceptors for authentication, error handling, and database management",
+      "PostgreSQL data models, Supabase authentication and realtime, schema migrations, and Docker development workflows",
   },
 ];
 
 export function About() {
   return (
-    <section id="about" className="flex min-h-screen items-center px-6 py-24">
+    <section id="about" className="detail-section px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <motion.div
@@ -36,12 +39,14 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
+          className="detail-heading mb-16"
         >
-          <span className="text-sm font-medium text-primary-text">About me</span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+          <span className="text-sm font-medium text-primary-text">
+            About me
+          </span>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Get to know me
-          </h2>
+          </h1>
         </motion.div>
 
         <div className="grid gap-16 md:grid-cols-2">
@@ -54,35 +59,41 @@ export function About() {
             className="space-y-5 text-muted"
           >
             <p className="leading-relaxed">
-              Hi! I&apos;m <span className="font-medium text-foreground">so.sawz</span>,
-              a frontend developer who graduated in Computer Engineering and
-              Artificial Intelligence from Walailak University.
+              Hi! I&apos;m{" "}
+              <span className="font-medium text-foreground">so.sawz</span>, a
+              full stack developer based in Bangkok, with a degree in Computer
+              Engineering and Artificial Intelligence from Walailak University.
             </p>
             <p className="leading-relaxed">
-              I&apos;ve built cross-platform mobile apps with React Native at
-              ThaiDotRun and currently develop frontend applications with
-              React.js and Tailwind CSS at 11-Infotech System. I focus on
-              writing clean, maintainable code with great user experience.
+              I currently work at {siteConfig.currentEmployer}. I build across
+              the stack: React and Next.js on the frontend, Go and TypeScript
+              APIs on the backend, and PostgreSQL for application data. My work
+              includes operational dashboards, a veterinary clinic workspace, a
+              shared cat-care tracker, and an interactive 3D equine model
+              explorer.
             </p>
             <p className="leading-relaxed">
-              My day-to-day involves building reusable UI components, integrating
-              REST APIs, and working with design systems like shadcn/ui to
-              deliver consistent, production-ready applications.
+              My background in frontend development and React Native shapes how
+              I approach complete applications. I care about clear user flows,
+              practical API design, and data that stays consistent across the
+              system. I also explore Java and Spring Boot through a task
+              management API.
             </p>
 
-            {/* Quick stats */}
-            <div className="flex gap-8 pt-4">
+            <div className="flex flex-wrap gap-8 border-t border-border pt-6">
               <div>
-                <p className="text-2xl font-bold text-foreground">1+</p>
-                <p className="text-sm text-muted">Years Experience</p>
+                <p className="text-2xl font-medium text-foreground">
+                  {projects.length}
+                </p>
+                <p className="text-sm text-muted">Selected projects</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">2</p>
-                <p className="text-sm text-muted">Companies</p>
+                <p className="text-2xl font-medium text-foreground">UI → API</p>
+                <p className="text-sm text-muted">Full-stack focus</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">7+</p>
-                <p className="text-sm text-muted">Tech Stacks</p>
+                <p className="text-2xl font-medium text-foreground">SQL</p>
+                <p className="text-sm text-muted">Data foundations</p>
               </div>
             </div>
           </motion.div>

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { projects } from "@/lib/projects";
 import { siteConfig } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/skills",
+    "/projects",
+    ...projects.map(({ slug }) => `/projects/${slug}`),
     "/experience",
     "/contact",
   ];
