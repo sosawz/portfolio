@@ -1,43 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Download, GraduationCap } from "lucide-react";
+import { ArrowUpRight, Briefcase, Download, GraduationCap } from "lucide-react";
 import Link from "next/link";
+import { experiences } from "@/lib/experience";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-const experiences = [
-  {
-    type: "work" as const,
-    title: "Frontend Developer",
-    company: "11-Infotech System Co., Ltd.",
-    period: "Jun 2025 - Present",
-    description: [
-      "Developing frontend applications with React.js and Tailwind CSS",
-      "Building UI components with shadcn/ui for consistent design system",
-      "Integrating REST APIs using Axios with interceptor for authentication and error handling",
-      "Deploying production builds via FTP",
-    ],
-    tech: ["React.js", "Tailwind CSS", "shadcn/ui", "Axios", "REST API", "FTP Deploy"],
-  },
-  {
-    type: "internship" as const,
-    title: "Mobile Developer Intern",
-    company: "ThaiDotRun Co., Ltd.",
-    period: "Sep 2024 - Apr 2025",
-    description: [
-      "Built cross-platform mobile applications using React Native",
-      "Implemented user authentication with Firebase Auth",
-      "Managed database with Neon (serverless PostgreSQL)",
-      "Handled file uploads and media storage with Google Cloud Storage",
-    ],
-    tech: ["React Native", "Firebase Auth", "NeonDB", "Google Cloud Storage"],
-  },
-];
-
 export function Experience() {
   return (
-    <section id="experience" className="px-6 py-24">
+    <section id="experience" className="detail-section px-6">
       <div className="mx-auto max-w-4xl">
         {/* Section header */}
         <motion.div
@@ -45,12 +17,14 @@ export function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
+          className="detail-heading mb-16"
         >
-          <span className="text-sm font-medium text-primary-text">Experience</span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+          <span className="text-sm font-medium text-primary-text">
+            Experience
+          </span>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Where I&apos;ve worked
-          </h2>
+          </h1>
         </motion.div>
 
         {/* Timeline */}
@@ -125,6 +99,20 @@ export function Experience() {
           </div>
         </div>
 
+        <section className="experience-project-focus">
+          <p className="eyebrow">Beyond the job title</p>
+          <h2>Full-stack project contributions</h2>
+          <p>
+            My recent project work spans Next.js interfaces, Go API changes,
+            database query improvements, reporting exports, and regression tests
+            within a team-built operations platform. Personal projects extend
+            that work into Hono, Supabase, and Spring Boot.
+          </p>
+          <Link href="/projects" className="text-link">
+            Explore the projects <ArrowUpRight size={16} />
+          </Link>
+        </section>
+
         {/* Education */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -133,7 +121,9 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 mt-24"
         >
-          <span className="text-sm font-medium text-primary-text">Education</span>
+          <span className="text-sm font-medium text-primary-text">
+            Education
+          </span>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Where I&apos;ve studied
           </h2>
@@ -159,9 +149,7 @@ export function Experience() {
                 <h3 className="text-lg font-semibold">
                   Bachelor of Engineering
                 </h3>
-                <p className="text-sm text-primary-text">
-                  Walailak University
-                </p>
+                <p className="text-sm text-primary-text">Walailak University</p>
               </div>
               <span className="text-sm text-muted">2021 - 2024</span>
             </div>
@@ -169,7 +157,8 @@ export function Experience() {
               Computer Engineering and Artificial Intelligence
             </p>
             <p className="mt-1 text-sm text-muted">
-              GPA: <span className="font-medium text-foreground">3.72</span> / 4.00
+              GPA: <span className="font-medium text-foreground">3.72</span> /
+              4.00
             </p>
           </div>
         </motion.div>

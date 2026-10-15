@@ -1,8 +1,10 @@
 export const siteConfig = {
   name: "so.sawz",
   title: "sosawz",
+  role: "Software Engineer",
+  currentEmployer: "Multi Innovation Engineering",
   description:
-    "Frontend developer portfolio showcasing skills and experience. Specializing in React, Next.js, and TypeScript.",
+    "Software Engineer building full-stack web applications with React, Next.js, TypeScript, Go, and PostgreSQL. Explore selected projects across interfaces, APIs, and databases.",
   url: "https://sosawz.dev",
   ogImage: "https://sosawz.dev/og.png",
   author: {
@@ -17,6 +19,7 @@ export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
 
   { label: "Experience", href: "/experience" },
   { label: "Contact", href: "/contact" },

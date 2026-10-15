@@ -4,7 +4,7 @@ import { Experience } from "@/components/sections/Experience";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "My professional experience and career journey as a frontend developer.",
+    "My development journey from frontend and mobile applications to full-stack project contributions.",
 };
 
 export default function ExperiencePage() {

@@ -1,43 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, Server, Wrench } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Database, Monitor, Server, Wrench } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 const skillCategories = [
   {
     icon: Monitor,
-    title: "Frontend",
-    description: "Building responsive web and mobile interfaces with React ecosystem and consistent design systems.",
+    title: "Frontend & Mobile",
+    description:
+      "Responsive interfaces, search and reporting workflows, and mobile application foundations.",
     skills: [
-      "React.js",
-      "React Native",
+      "React",
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
+      "TanStack Query",
+      "React Native",
+      "Expo",
       "shadcn/ui",
-      "Framer Motion",
-      "HTML / CSS",
     ],
   },
   {
     icon: Server,
-    title: "API & Database",
-    description: "Integrating REST APIs with authentication handling and managing serverless databases.",
-    skills: ["REST API", "Axios", "Firebase Auth", "NeonDB", "PostgreSQL"],
+    title: "Backend & APIs",
+    description:
+      "HTTP services, request validation, business logic, and API integration across the application stack.",
+    skills: ["Go", "Fiber", "Hono", "Bun", "REST APIs", "Zod", "GORM"],
+  },
+  {
+    icon: Database,
+    title: "Databases & Auth",
+    description:
+      "Relational data, migrations, query improvements, authentication, and managed real-time updates.",
+    skills: [
+      "PostgreSQL",
+      "SQL",
+      "Supabase",
+      "Schema migrations",
+      "Row-level security",
+      "Supabase Realtime",
+      "Firebase Auth",
+    ],
   },
   {
     icon: Wrench,
-    title: "Tools & Services",
-    description: "Using cloud services and developer tools to ship and maintain production applications.",
-    skills: ["Git", "Vercel", "Google Cloud Storage", "Figma", "FTP Deploy"],
+    title: "Delivery & Testing",
+    description:
+      "Version control, containerized development, and regression tests for application behavior.",
+    skills: [
+      "Git",
+      "Docker",
+      "Docker Compose",
+      "Jest",
+      "Go testing",
+      "Node.js test runner",
+      "Vercel",
+    ],
   },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="px-6 py-24">
+    <section id="skills" className="detail-section px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <motion.div
@@ -45,18 +72,20 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
+          className="detail-heading mb-16"
         >
           <span className="text-sm font-medium text-primary-text">Skills</span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Technologies I work with</h2>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+            Technologies I work with
+          </h1>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-            A collection of tools, frameworks, and technologies I use to build web and mobile applications from end to
-            end.
+            A collection of tools, frameworks, and technologies I use to build
+            web and mobile applications from end to end.
           </p>
         </motion.div>
 
         {/* Skill categories */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -79,7 +108,9 @@ export function Skills() {
               </div>
 
               {/* Description */}
-              <p className="mb-5 text-sm leading-relaxed text-muted">{category.description}</p>
+              <p className="mb-5 text-sm leading-relaxed text-muted">
+                {category.description}
+              </p>
 
               {/* Skill badges */}
               <div className="flex flex-wrap gap-2">
@@ -104,6 +135,36 @@ export function Skills() {
           ))}
         </div>
 
+        <section
+          className="mt-6 rounded-2xl border border-border p-6"
+          aria-labelledby="visualization-skills"
+        >
+          <h2 id="visualization-skills" className="text-lg font-semibold">
+            Interactive 3D & Visualization
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+            Building EQÜINA to explore GLB models through mesh selection, camera
+            controls, visibility management, and imported annotations.
+          </p>
+          <ul
+            className="project-tags"
+            aria-label="3D visualization technologies"
+          >
+            {[
+              "Three.js",
+              "React Three Fiber",
+              "Drei",
+              "GLB / glTF",
+              "Vite",
+            ].map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ul>
+          <Link href="/projects/equine-atlas" className="text-link">
+            Explore EQÜINA <ArrowUpRight size={16} />
+          </Link>
+        </section>
+
         {/* Currently learning */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -112,9 +173,21 @@ export function Skills() {
           viewport={{ once: true, margin: "-100px" }}
           className="mt-6 rounded-2xl border border-border p-6 transition-colors duration-300 hover:border-primary/50 hover:bg-surface"
         >
-          <p className="mb-3 text-sm font-medium text-primary-text">Currently exploring</p>
+          <p className="mb-3 text-sm font-medium text-primary-text">
+            Learning through projects
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-muted">
+            Building a Task Manager API to practice layered services,
+            validation, pagination, and relational persistence.
+          </p>
           <div className="flex flex-wrap gap-2">
-            {["Go", "Playwright"].map((tech, i) => (
+            {[
+              "Java",
+              "Spring Boot",
+              "Spring Data JPA",
+              "Bean Validation",
+              "Maven",
+            ].map((tech, i) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.85 }}

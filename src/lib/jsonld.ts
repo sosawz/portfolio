@@ -6,7 +6,11 @@ export function getPersonJsonLd() {
     "@type": "Person",
     name: siteConfig.author.name,
     url: siteConfig.url,
-    jobTitle: "Frontend Developer",
+    jobTitle: siteConfig.role,
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.currentEmployer,
+    },
     sameAs: [siteConfig.author.github, siteConfig.author.linkedin],
     email: siteConfig.author.email,
   };

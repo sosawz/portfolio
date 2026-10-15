@@ -23,8 +23,8 @@ const geistMono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#f8f7f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#171915" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -33,12 +33,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.title} | Portfolio`,
+    default: `${siteConfig.title} | ${siteConfig.role}`,
     template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
   keywords: [
-    "Frontend Developer",
+    siteConfig.role,
+    "Full Stack Developer",
+    "Go",
+    "PostgreSQL",
+    "Hono",
+    "Spring Boot",
     "React",
     "Next.js",
     "TypeScript",
@@ -52,7 +57,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: `${siteConfig.title} | Portfolio`,
+    title: `${siteConfig.title} | ${siteConfig.role}`,
     description: siteConfig.description,
     siteName: siteConfig.title,
     images: [
@@ -60,13 +65,13 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.author.name} - Frontend Developer`,
+        alt: `${siteConfig.author.name} - ${siteConfig.role}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.title} | Portfolio`,
+    title: `${siteConfig.title} | ${siteConfig.role}`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
@@ -101,8 +106,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider>
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
           <Navbar />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
           <BackToTop />
         </ThemeProvider>
